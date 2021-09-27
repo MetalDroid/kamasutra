@@ -27,7 +27,8 @@ public class Kamasutra {
     /**
      * Constructor using default alphabet (no randomize).
      * @param alphabet String that contains the alphabet to use.
-     * @throws Exception The length of the alphabet must be a multiple of 2 and greater than 0.
+     * @throws Exception The length of the alphabet must be a multiple of 2.
+     * If the length is 0, then a new alphabet will be generated using the current alphabet.
      */
     public Kamasutra(String alphabet) throws Exception {
         setDefaultAlphabet(alphabet);
@@ -37,7 +38,8 @@ public class Kamasutra {
      * Constructor using default alphabet (no randomize), specify whether to use all uppercase.
      * @param alphabet String that contains the alphabet to use.
      * @param useUppercase Specify whether to use all uppercase.
-     * @throws Exception The length of the alphabet must be a multiple of 2 and greater than 0.
+     * @throws Exception The length of the alphabet must be a multiple of 2.
+     * If the length is 0, then a new alphabet will be generated using the current alphabet.
      */
     public Kamasutra(String alphabet, boolean useUppercase) throws Exception {
         setDefaultAlphabet(alphabet);
@@ -88,7 +90,8 @@ public class Kamasutra {
     /**
      * Assign the alphabet to use.
      * @param defaultAlphabet Custom alphabet.
-     * @throws Exception The length of the alphabet must be a multiple of 2 and greater than 0.
+     * @throws Exception The length of the alphabet must be a multiple of 2.
+     * If the length is 0, then a new alphabet will be generated using the current alphabet.
      */
     public void setDefaultAlphabet(String defaultAlphabet) throws Exception {
         Set<Character> uniques = new HashSet<>();
