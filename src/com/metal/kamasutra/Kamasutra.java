@@ -10,16 +10,20 @@ public class Kamasutra {
 
     /**
      * Constructor using default alphabet (random).
+     * @throws Exception The length of the alphabet must be a multiple of 2.
+     * If the length is 0, then a new alphabet will be generated using the current alphabet.
      */
-    public Kamasutra() {
+    public Kamasutra() throws Exception {
         genAlphabet();
     }
 
     /**
      * Constructor using default alphabet (random), specify whether to use all uppercase.
      * @param useUppercase Specify whether to use all uppercase.
+     * @throws Exception The length of the alphabet must be a multiple of 2.
+     * If the length is 0, then a new alphabet will be generated using the current alphabet.
      */
-    public Kamasutra(boolean useUppercase) {
+    public Kamasutra(boolean useUppercase) throws Exception {
         genAlphabet();
         this.useUppercase = useUppercase;
     }
@@ -48,8 +52,10 @@ public class Kamasutra {
 
     /**
      * Randomizes the default alphabet or the one provided.
+     * @throws Exception The length of the alphabet must be a multiple of 2.
+     * If the length is 0, then a new alphabet will be generated using the current alphabet.
      */
-    public void genAlphabet(){
+    public void genAlphabet() throws Exception {
         char[] aTemp = defaultAlphabet.toCharArray();
         for (int i = aTemp.length - 1; i > 0; --i) {
             int j = new Random().nextInt(i + 1);
@@ -57,7 +63,7 @@ public class Kamasutra {
             aTemp[i] = aTemp[j];
             aTemp[j] = temp;
         }
-        defaultAlphabet = new String(aTemp).toUpperCase();
+        setDefaultAlphabet(new String(aTemp).toUpperCase());
     }
 
     /**

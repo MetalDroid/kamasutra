@@ -6,12 +6,18 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Kamasutra kamasutra = new Kamasutra();
-        String text = "hello world";
-        String resA = kamasutra.encDec(text);
-        System.out.println(resA);
-        String resB = kamasutra.encDec(resA);
-        System.out.println(resB);
+        Kamasutra kamasutra;
+
+        try {
+            kamasutra = new Kamasutra();
+            String text = "hello world";
+            String resA = kamasutra.encDec(text);
+            System.out.println(resA);
+            String resB = kamasutra.encDec(resA);
+            System.out.println(resB);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
 
         try {
             kamasutra = new Kamasutra("qwertyuiopasdfghjklñzxcvbnmç");
