@@ -4,6 +4,12 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
+/**
+ * Set of methods for applying Kamasutra encryption.
+ * It consists of dividing a given alphabet into 2 rows.
+ * Then, each letter of the text to be encrypted is replaced by its partner.
+ * @author SoldierFC , A.K.A. MetalDroid
+ */
 public class Kamasutra {
     private String defaultAlphabet = "abcdefghijklmnopqrstuvwxyz";
     private boolean useUppercase;
